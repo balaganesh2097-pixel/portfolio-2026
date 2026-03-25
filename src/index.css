@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-surface: #0b1326;
+  --color-surface-container: #171f33;
+  --color-surface-container-low: #131b2e;
+  --color-surface-container-high: #222a3d;
+  --color-surface-container-highest: #2d3449;
+  --color-surface-container-lowest: #060e20;
+  
+  --color-primary: #89ceff;
+  --color-on-primary: #00344d;
+  --color-on-primary-container: #0089c3;
+  
+  --color-secondary-container: #3a4a5f;
+  --color-on-secondary-container: #a9bad3;
+  
+  --color-tertiary: #3cddc7;
+  --color-on-tertiary-container: #009182;
+  
+  --color-on-surface: #dae2fd;
+  --color-on-surface-variant: #c6c6cd;
+  --color-outline-variant: #45464d;
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  body {
+    @apply bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-primary;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-surface-container/60 backdrop-blur-xl border-none;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px rgba(137, 206, 255, 0.3);
+  }
+  
+  .accent-glow {
+    box-shadow: 0 0 40px -10px rgba(137, 206, 255, 0.15);
+  }
+}
