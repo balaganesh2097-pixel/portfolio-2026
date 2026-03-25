@@ -136,7 +136,7 @@ export function Contact() {
             <h3 className="font-headline text-2xl font-bold text-on-surface mb-6 text-center lg:text-left">Contact Information</h3>
             <div className="space-y-4 md:space-y-6">
               {[
-                { icon: Mail, label: "Email", value: "bala.ganesh@apzzo.com", href: "mailto:bala.ganesh@apzzo.com" },
+                { icon: Mail, label: "Email", value: "bala.ganesh2097@gmail.com", href: "mailto:bala.ganesh2097@gmail.com" },
                 {
                   icon: Phone,
                   label: "Mobile",
@@ -146,13 +146,20 @@ export function Contact() {
                 {
                   icon: Linkedin,
                   label: "LinkedIn",
-                  value: "www.linkedin.com/in/bala-ganesh-m3110",
+                  value: "Bala Ganesh M",
                   href: "https://www.linkedin.com/in/bala-ganesh-m3110",
                 }
               ].map((item) => (
                 <a 
                   key={item.label}
                   href={item.href}
+                  onClick={(e) => {
+                    // Force `mailto:`/`tel:` navigation in case the environment blocks default link handling.
+                    if (item.href?.startsWith("mailto:") || item.href?.startsWith("tel:")) {
+                      e.preventDefault();
+                      window.location.href = item.href;
+                    }
+                  }}
                   className="flex items-center gap-4 md:gap-6 p-4 md:p-6 bg-surface-container-low rounded-2xl border border-outline-variant/10 hover:bg-surface-container-high transition-all group"
                 >
                   <div className="p-3 md:p-4 bg-primary/10 text-primary rounded-xl group-hover:bg-primary group-hover:text-on-primary transition-all">

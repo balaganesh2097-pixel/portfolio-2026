@@ -2,8 +2,8 @@ import { Linkedin, Mail, MessageCircle } from "lucide-react";
 import { cn } from "@/src/lib/utils";
 
 const SOCIAL_LINKS = [
-  { name: "LinkedIn", icon: Linkedin, href: "#" },
-  { name: "Email", icon: Mail, href: "mailto:bala.ganesh@apzzo.com" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/bala-ganesh-m3110/" },
+  { name: "Email", icon: Mail, href: "mailto:bala.ganesh2097@gmail.com" },
   { name: "WhatsApp", icon: MessageCircle, href: "https://wa.me/916369706322" },
 ];
 
@@ -15,6 +15,8 @@ export function Sidebar() {
           <a
             key={link.name}
             href={link.href}
+            target={link.href.startsWith("http") ? "_blank" : undefined}
+            rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
             className={cn(
               "flex items-center w-full px-5 gap-4 text-on-surface-variant hover:bg-primary/10 hover:text-primary transition-all duration-300 cursor-pointer py-2",
             )}
