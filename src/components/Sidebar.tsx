@@ -1,9 +1,10 @@
-import { Linkedin, Mail, MessageCircle } from "lucide-react";
+import { Linkedin, Send, MessageCircle } from "lucide-react";
 import { cn } from "@/src/lib/utils";
 
 const SOCIAL_LINKS = [
   { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/bala-ganesh-m3110/" },
-  { name: "Email", icon: Mail, href: "mailto:bala.ganesh2097@gmail.com" },
+  // Redirect to the contact section instead of opening a phone/messaging app.
+  { name: "Telegram", icon: Send, href: "https://t.me/+916369706322" },
   { name: "WhatsApp", icon: MessageCircle, href: "https://wa.me/916369706322" },
 ];
 

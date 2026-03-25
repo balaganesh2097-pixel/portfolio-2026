@@ -11,7 +11,7 @@ const NAV_LINKS = [
 ];
 
 const RESUME_URL =
-  "https://drive.google.com/file/d/1ovLjSRbiTemUfbLIZfHA5xJdyI3uwuSo/view?usp=sharing";
+  "https://drive.google.com/file/d/12DwruM4rHPmczHterJKL1ISVBcgsV-ZB/view?usp=sharing";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +27,7 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
       <div className="flex justify-between items-center w-full px-6 md:px-12 py-4 max-w-7xl mx-auto">
-        <button 
+        <button
           onClick={() => scrollToSection("home")}
           className="text-xl md:text-2xl font-black tracking-tighter text-on-surface font-headline uppercase cursor-pointer"
         >
@@ -41,7 +41,7 @@ export function Navbar() {
               key={link.id}
               onClick={() => scrollToSection(link.id)}
               className={cn(
-                "text-sm uppercase tracking-widest font-bold transition-all duration-300 cursor-pointer text-on-surface-variant hover:text-on-surface"
+                "text-sm uppercase tracking-widest font-bold transition-all duration-300 cursor-pointer text-on-surface-variant hover:text-on-surface",
               )}
             >
               {link.name}
@@ -58,7 +58,7 @@ export function Navbar() {
         </div>
 
         {/* Mobile/Tablet Toggle - Show up to lg (1024px) */}
-        <button 
+        <button
           className="lg:hidden p-2 text-on-surface"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -67,10 +67,12 @@ export function Navbar() {
       </div>
 
       {/* Mobile/Tablet Menu */}
-      <div className={cn(
-        "lg:hidden absolute top-full left-0 w-full bg-surface-container border-b border-outline-variant/10 transition-all duration-300 overflow-hidden",
-        isOpen ? "max-h-96 opacity-100 py-8" : "max-h-0 opacity-0 py-0"
-      )}>
+      <div
+        className={cn(
+          "lg:hidden absolute top-full left-0 w-full bg-surface-container border-b border-outline-variant/10 transition-all duration-300 overflow-hidden",
+          isOpen ? "max-h-96 opacity-100 py-8" : "max-h-0 opacity-0 py-0",
+        )}
+      >
         <div className="flex flex-col items-center gap-8">
           {NAV_LINKS.map((link) => (
             <button
