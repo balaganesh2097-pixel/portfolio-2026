@@ -1,0 +1,14 @@
+# Netlify configuration for a Vite SPA (React).
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA fallback: route everything to index.html.
+# Keeps client-side routing working on refresh/deep links.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
+
